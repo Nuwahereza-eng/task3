@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Sidebar Menu | Dark-Light Mode</title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark">
+    <div class="sidebar open">
+        <header>
+                <div class="image-text">
+                    <span class="image">
+                        <img src="images/logo.jpg" alt="logo">
+                    </span>
+                    <div class="text header-text">
+                        <span class="name">CodingLab</span>
+                        <span class="profession">Web developer</span>
+                    </div>
+                </div>
+                <i class="bx bx-chevron-right toggle"></i>
+        </header>
+        <ul class="nav-links">
+            <li class="search-box">
+                <div class="search">
+                    <i class="bx bx-search"></i>
+                    <input type="search" placeholder="Search...">
+                </div>
+            </li>
+            <li>
+                <a href="#">
+                        <i class="bx bx-grid-alt"></i>
+                        <span class="link_name">Dashboard</span>
+                    </a>
+                    <!-- Creating a blank Sub-menu -->
+                    <ul class="sub-menu blank">
+                        <li><a class="link_name" href="#">Category</a></li>
+                    </ul>
+            </li>
+            <li>
+                    <div class="icon-link">
+                        <a href="#">
+                            <i class="bx bx-collection"></i>
+                            <span class="link_name">Category</span>
+                        
+                        </a>
+                        <i class="bx bxs-chevron-down arrow"></i>
+                    </div>
+                    <!-- Creating a nested list for Sub-list Items of this Category -->
+                    <ul class="sub-menu">
+                        <li><a class="link_name" href="#">Category</a></li>
+                        <li><a href="#">HTML & CSS</a></li>
+                        <li><a href="#">JavaScript</a></li>
+                        <li><a href="#">PHP & MySQL</a></li>
+                    </ul>
+            </li>
+                <li>
+                    <div class="icon-link">
+                        <a href="#">
+                            <i class="bx bx-book-alt"></i>
+                            <span class="link_name">Posts</span>
+                        </a>
+                        <i class="bx bxs-chevron-down arrow"></i>
+                    </div>
+                    <ul class="sub-menu">
+                        <li><a class="link_name" href="#">Posts</a></li>
+                        <li><a href="#">Web Design</a></li>
+                        <li><a href="#">Login Form</a></li>
+                        <li><a href="#">Card Design</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="bx bx-pie-chart-alt-2"></i>
+                        <span class="link_name">Analytics</span>
+                    </a>
+                    <!-- Creating another blank Sub-menu -->
+                    <ul class="sub-menu blank">
+                        <li><a class="link_name" href="#">Analytics</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="bx bx-line-chart"></i>
+                        <span class="link_name">Chart</span>
+                    </a>
+                    <!-- Creating another blank Sub-menu -->
+                    <ul class="sub-menu blank">
+                        <li><a class="link_name" href="#">Chart</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="icon-link">
+                        <a href="#">
+                            <i class="bx bx-plug"></i>
+                            <span class="link_name">Plugins</span>
+                        </a>
+                        <i class="bx bxs-chevron-down arrow"></i>
+                    </div>
+                    <ul class="sub-menu">
+                        <li><a class="link_name" href="#">Plugins</a></li>
+                        <li><a href="#">UI Face</a></li>
+                        <li><a href="#">Pigments</a></li>
+                        <li><a href="#">Box Icons</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="bx bx-history"></i>
+                        <span class="link_name">History</span>
+                    </a>
+                    <!-- Creating another blank Sub-menu -->
+                    <ul class="sub-menu blank">
+                        <li><a class="link_name" href="#">History</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="bx bx-cog"></i>
+                        <span class="link_name">Settings</span>
+                    </a>
+                    <!-- Creating another blank Sub-menu -->
+                    <ul class="sub-menu blank">
+                        <li><a class="link_name" href="#">Settings</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="bx bx-log-out"></i>
+                        <span class="link_name">Log Out</span>
+                    </a>
+                </li>
+                <div class="mode">
+                    <div class="moon-sun">
+                        <i class="bx bx-moon moon "></i>
+                        <i class="bx bx-sun sun"></i>
+                    </div>
+                    <span class="mode-text text">Dark Mode</span>
+                    <div class="toggle-switch">
+                        <span class="switch"></span>
+                    </div>
+                </div>
+            </ul>
+        </div>
+        <section class="home">
+            <div class="home-content">
+                <span class="text">Drop down Sidebar</span>
+            </div>
+        </section>
+    <script>
+        let arrow = document.querySelectorAll(".arrow");
+        for (var i = 0; i < arrow.length; i++){
+            arrow[i].addEventListener('click',(e)=>{
+            let arrowParent = e.target.parentElement.parentElement;
+            console.log(arrowParent);
+            arrowParent.classList.toggle('showMenu');
+            });
+        }
+
+       let sidebar = document.querySelector('.sidebar');
+    //    let sidebarBtn = document.querySelector('.bx-menu');
+    //    console.log(sidebarBtn);
+    sidebarBtn.addEventListener('click',()=>{
+        // sidebar.classList.toggle('close');
+       });
+
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
